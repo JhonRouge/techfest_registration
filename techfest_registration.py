@@ -10,11 +10,11 @@ if n_par <= 0:
 #T2
 par = []
 for i in range(n_par):
-    name = input("Enter participant name: ")
+    name = input("\nEnter participant name: ")
     track = input("Enter a track: ")
     par.append({"name": name,"track": track})
 
-print("registered participants: ")
+print("\nregistered participants: ")
 for i, p in enumerate(par,1):
     print(f"{i}. {p['name']} - {p['track']}")
 
@@ -35,6 +35,15 @@ for p in par:
 
 if dup:
     for i in dup:
-        print(f"Duplicated name: {i}")
+        print(f"\nDuplicated name: {i}")
 else:
-    print("No duplicated names.")
+    print("\nNo duplicated names.")
+
+#T5
+sum = {}
+for p in par:
+    sum[p["track"]] = sum.get(p["track"], 0) + 1
+
+print("\nparticipants per track: ")
+for x, y in sum.items():
+    print(f"{x}: {y}")
