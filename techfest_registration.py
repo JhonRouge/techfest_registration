@@ -16,3 +16,9 @@ for i in range(n_par):
 print("registered participants: ")
 for i, p in enumerate(par,1):
     print(f"{i}. {p['name']} - {p['track']}")
+
+tracks = {p["track"] for p in par}
+print("\nTracks to offer in this year: ")
+print(", ".join(tracks))
+if len(tracks) < 2:
+    print("No more tracks to offer.")
